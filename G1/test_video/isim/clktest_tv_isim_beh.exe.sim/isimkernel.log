@@ -1,0 +1,28 @@
+Command line:
+   clktest_tv_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  59393
+
+Wed Dec 26 15:18:57 2018
+
+
+ Elaboration Time: 0.140625 sec
+
+ Current Memory Usage: 5335.19 Meg
+
+ Total Signals          : 117
+ Total Nets             : 99
+ Total Signal Drivers   : 66
+ Total Blocks           : 17
+ Total Primitive Blocks : 12
+ Total Processes        : 179
+ Total Traceable Variables  : 207
+ Total Scalar Nets and Variables : 5287
+
+ Total Simulation Time: 0.25 sec
+
+ Current Memory Usage: 4706.05 Meg
+
+Wed Dec 26 16:49:40 2018
+

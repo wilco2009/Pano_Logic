@@ -1,0 +1,26 @@
+xst -intstyle ise -ifn "C:/Users/aleja/OneDrive/ISEWebpack/Pano G2/test/Blink.xst" -ofn "C:/Users/aleja/OneDrive/ISEWebpack/Pano G2/test/Blink.syr" 
+xst -intstyle ise -ifn "C:/Users/aleja/OneDrive/ISEWebpack/Pano G2/test/Blink.xst" -ofn "C:/Users/aleja/OneDrive/ISEWebpack/Pano G2/test/Blink.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Pano.ucf -p xc6slx150-fgg484-3 "Blink.ngc" Blink.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Pano.ucf -p xc6slx150-fgg484-3 "Blink.ngc" Blink.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Pano.ucf -p xc6slx150-fgg484-3 "Blink.ngc" Blink.ngd  
+map -intstyle ise -p xc6slx150-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Blink_map.ncd Blink.ngd Blink.pcf 
+par -w -intstyle ise -ol high -mt off Blink_map.ncd Blink.ncd Blink.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Blink.twx Blink.ncd -o Blink.twr Blink.pcf -ucf Pano.ucf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Pano.ucf -p xc6slx150-fgg484-3 "Blink.ngc" Blink.ngd  
+map -intstyle ise -p xc6slx150-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Blink_map.ncd Blink.ngd Blink.pcf 
+par -w -intstyle ise -ol high -mt off Blink_map.ncd Blink.ncd Blink.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Blink.twx Blink.ncd -o Blink.twr Blink.pcf -ucf Pano.ucf 
+bitgen -intstyle ise -f Blink.ut Blink.ncd 
+xst -intstyle ise -ifn "C:/Users/aleja/OneDrive/ISEWebpack/Pano G2/test/Blink.xst" -ofn "C:/Users/aleja/OneDrive/ISEWebpack/Pano G2/test/Blink.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Pano.ucf -p xc6slx150-fgg484-3 "Blink.ngc" Blink.ngd  
+map -intstyle ise -p xc6slx150-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Blink_map.ncd Blink.ngd Blink.pcf 
+par -w -intstyle ise -ol high -mt off Blink_map.ncd Blink.ncd Blink.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Blink.twx Blink.ncd -o Blink.twr Blink.pcf -ucf Pano.ucf 
+xst -intstyle ise -ifn "C:/Users/aleja/OneDrive/ISEWebpack/Pano G2/test/Blink.xst" -ofn "C:/Users/aleja/OneDrive/ISEWebpack/Pano G2/test/Blink.syr" 
+xst -intstyle ise -ifn "C:/Users/aleja/OneDrive/ISEWebpack/Pano G2/test/Blink.xst" -ofn "C:/Users/aleja/OneDrive/ISEWebpack/Pano G2/test/Blink.syr" 
+xst -intstyle ise -ifn "C:/Users/aleja/OneDrive/ISEWebpack/Pano G2/test/Blink.xst" -ofn "C:/Users/aleja/OneDrive/ISEWebpack/Pano G2/test/Blink.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Pano.ucf -p xc6slx150-fgg484-3 "Blink.ngc" Blink.ngd  
+map -intstyle ise -p xc6slx150-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Blink_map.ncd Blink.ngd Blink.pcf 
+par -w -intstyle ise -ol high -mt off Blink_map.ncd Blink.ncd Blink.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Blink.twx Blink.ncd -o Blink.twr Blink.pcf -ucf Pano.ucf 
+bitgen -intstyle ise -f Blink.ut Blink.ncd 

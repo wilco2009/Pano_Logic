@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\aleja\OneDrive\ISEWebpack\Pano G1\test_video\main.ncd
+OUTFILE=C:\Users\aleja\OneDrive\ISEWebpack\Pano G1\test_video\main.bit
+FAMILY=Spartan3E
+PART=xc3s1600e-5fg320
+WORKINGDIR=C:\Users\aleja\OneDrive\ISEWebpack\Pano G1\test_video
+LICENSE=WebPack
+USER_INFO=__0_0_0

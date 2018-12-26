@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/aleja/OneDrive/ISEWebpack/Pano G1/test_video/clktest_tv_isim_beh.exe" -prj "C:/Users/aleja/OneDrive/ISEWebpack/Pano G1/test_video/clktest_tv_beh.prj" "work.clktest_tv" "work.glbl" 

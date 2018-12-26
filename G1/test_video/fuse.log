@@ -1,0 +1,32 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/aleja/OneDrive/ISEWebpack/Pano G1/test_video/clktest_tv_isim_beh.exe -prj C:/Users/aleja/OneDrive/ISEWebpack/Pano G1/test_video/clktest_tv_beh.prj work.clktest_tv work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/aleja/OneDrive/ISEWebpack/Pano G1/test_video/DCM_div2.v" into library work
+Analyzing Verilog file "C:/Users/aleja/OneDrive/ISEWebpack/Pano G1/test_video/main.v" into library work
+Analyzing Verilog file "C:/Users/aleja/OneDrive/ISEWebpack/Pano G1/test_video/clktest_tv.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:1016 - "C:/Users/aleja/OneDrive/ISEWebpack/Pano G1/test_video/main.v" Line 46: Port CLKIN_IBUFG_OUT is not connected to this instance
+Completed static elaboration
+Compiling module BUFG
+Compiling module IBUFG
+Compiling module dcm_sp_clock_divide_by_2
+Compiling module dcm_sp_maximum_period_check(cloc...
+Compiling module dcm_sp_maximum_period_check(cloc...
+Compiling module dcm_sp_clock_lost
+Compiling module DCM_SP
+Compiling module FDDRCPE(INIT=1'b0)
+Compiling module OBUF
+Compiling module OFDDRCPE
+Compiling module DCM_div2
+Compiling module main
+Compiling module clktest_tv
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 14 Verilog Units
+Built simulation executable C:/Users/aleja/OneDrive/ISEWebpack/Pano G1/test_video/clktest_tv_isim_beh.exe
+Fuse Memory Usage: 31952 KB
+Fuse CPU Usage: 624 ms

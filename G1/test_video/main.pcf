@@ -1,0 +1,66 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Wed Dec 26 20:49:36 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "vo_r<2>" LOCATE = SITE "C7" LEVEL 1;
+COMP "vo_r<3>" LOCATE = SITE "F8" LEVEL 1;
+COMP "vo_r<4>" LOCATE = SITE "F9" LEVEL 1;
+COMP "vo_r<5>" LOCATE = SITE "C9" LEVEL 1;
+COMP "vo_r<6>" LOCATE = SITE "E9" LEVEL 1;
+COMP "vo_g<0>" LOCATE = SITE "B10" LEVEL 1;
+COMP "vo_r<7>" LOCATE = SITE "D9" LEVEL 1;
+COMP "osc_clk" LOCATE = SITE "U10" LEVEL 1;
+COMP "vo_g<1>" LOCATE = SITE "C11" LEVEL 1;
+COMP "vo_g<2>" LOCATE = SITE "D10" LEVEL 1;
+COMP "vo_g<3>" LOCATE = SITE "A10" LEVEL 1;
+COMP "vo_g<4>" LOCATE = SITE "A7" LEVEL 1;
+COMP "vo_g<5>" LOCATE = SITE "C4" LEVEL 1;
+COMP "vo_g<6>" LOCATE = SITE "D11" LEVEL 1;
+COMP "vo_blank_" LOCATE = SITE "A8" LEVEL 1;
+COMP "vo_g<7>" LOCATE = SITE "G9" LEVEL 1;
+COMP "vo_hsync" LOCATE = SITE "C2" LEVEL 1;
+COMP "vo_clk" LOCATE = SITE "E10" LEVEL 1;
+COMP "vo_b<0>" LOCATE = SITE "A6" LEVEL 1;
+COMP "vo_b<1>" LOCATE = SITE "B6" LEVEL 1;
+COMP "vo_vsync" LOCATE = SITE "D1" LEVEL 1;
+COMP "vo_b<2>" LOCATE = SITE "C5" LEVEL 1;
+COMP "vo_b<3>" LOCATE = SITE "B4" LEVEL 1;
+COMP "vo_b<4>" LOCATE = SITE "E6" LEVEL 1;
+COMP "vo_b<5>" LOCATE = SITE "C3" LEVEL 1;
+COMP "vo_b<6>" LOCATE = SITE "D6" LEVEL 1;
+COMP "vo_b<7>" LOCATE = SITE "A4" LEVEL 1;
+COMP "vo_r<0>" LOCATE = SITE "F7" LEVEL 1;
+COMP "vo_r<1>" LOCATE = SITE "E8" LEVEL 1;
+PIN clock_gen/OFDDRCPE_INST/FDDRCPE1/ODDR2/FF0_pins<1> = BEL
+        "clock_gen/OFDDRCPE_INST/FDDRCPE1/ODDR2/FF0" PINNAME CK;
+TIMEGRP clock_gen_CLK0_BUF = PIN
+        "clock_gen/OFDDRCPE_INST/FDDRCPE1/ODDR2/FF0_pins<1>" BEL
+        "clock_gen/CLK0_BUFG_INST.GCLKMUX" BEL "clock_gen/CLK0_BUFG_INST";
+PIN clock_gen/OFDDRCPE_INST/FDDRCPE1/ODDR2/FF1_pins<1> = BEL
+        "clock_gen/OFDDRCPE_INST/FDDRCPE1/ODDR2/FF1" PINNAME CK;
+TIMEGRP clock_gen_CLK180_BUF = PIN
+        "clock_gen/OFDDRCPE_INST/FDDRCPE1/ODDR2/FF1_pins<1>" BEL
+        "clock_gen/CLK180_BUFG_INST.GCLKMUX" BEL "clock_gen/CLK180_BUFG_INST";
+TIMEGRP clock_gen_CLKDV_BUF = BEL "video_signals/vc_10" BEL
+        "video_signals/vc_9" BEL "video_signals/vc_8" BEL "video_signals/vc_7"
+        BEL "video_signals/vc_6" BEL "video_signals/vc_5" BEL
+        "video_signals/vc_4" BEL "video_signals/vc_3" BEL "video_signals/vc_2"
+        BEL "video_signals/vc_1" BEL "video_signals/vc_0" BEL
+        "video_signals/hc_10" BEL "video_signals/hc_9" BEL
+        "video_signals/hc_8" BEL "video_signals/hc_7" BEL "video_signals/hc_6"
+        BEL "video_signals/hc_5" BEL "video_signals/hc_4" BEL
+        "video_signals/hc_3" BEL "video_signals/hc_2" BEL "video_signals/hc_1"
+        BEL "video_signals/hc_0" BEL "clock_gen/CLKDV_BUFG_INST.GCLKMUX" BEL
+        "clock_gen/CLKDV_BUFG_INST";
+PIN clock_gen/DCM_SP_INST_pins<4> = BEL "clock_gen/DCM_SP_INST" PINNAME CLKIN;
+TIMEGRP osc_clk = PIN "clock_gen/DCM_SP_INST_pins<4>";
+TS_osc_clk = PERIOD TIMEGRP "osc_clk" 10 ns HIGH 50%;
+TS_clock_gen_CLK0_BUF = PERIOD TIMEGRP "clock_gen_CLK0_BUF" TS_osc_clk HIGH
+        50%;
+TS_clock_gen_CLK180_BUF = PERIOD TIMEGRP "clock_gen_CLK180_BUF" TS_osc_clk
+        PHASE 5 ns HIGH 50%;
+TS_clock_gen_CLKDV_BUF = PERIOD TIMEGRP "clock_gen_CLKDV_BUF" TS_osc_clk * 2
+        HIGH 50%;
+SCHEMATIC END;
+

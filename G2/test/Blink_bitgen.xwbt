@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\aleja\OneDrive\ISEWebpack\Pano G2\test\Blink.ncd
+OUTFILE=C:\Users\aleja\OneDrive\ISEWebpack\Pano G2\test\Blink.bit
+FAMILY=Spartan6
+PART=xc6slx150-3fgg484
+WORKINGDIR=C:\Users\aleja\OneDrive\ISEWebpack\Pano G2\test
+LICENSE=ISE
+USER_INFO=__0_0_0

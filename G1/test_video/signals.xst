@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/aleja/OneDrive/ISEWebpack/Pano G1/test_video/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/aleja/OneDrive/ISEWebpack/Pano G1/test_video/xst"
+elaborate
+-ifn signals.prj
+-ifmt mixed

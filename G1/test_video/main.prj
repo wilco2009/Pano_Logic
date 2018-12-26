@@ -1,0 +1,4 @@
+verilog work "signals.v"
+verilog work "DCM_div2.v"
+verilog work "background.v"
+verilog work "main.v"

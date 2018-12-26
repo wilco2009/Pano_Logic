@@ -1,0 +1,18 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Sat Dec 22 17:59:59 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+CONFIG VCCAUX = "2.5";
+COMP "clk" LOCATE = SITE "Y13" LEVEL 1;
+COMP "led_red" LOCATE = SITE "E12" LEVEL 1;
+COMP "led_green" LOCATE = SITE "F13" LEVEL 1;
+COMP "led_blue" LOCATE = SITE "H13" LEVEL 1;
+TIMEGRP clk_osc = BEL "blink" BEL "cnt_0" BEL "cnt_1" BEL "cnt_2" BEL "cnt_3"
+        BEL "cnt_4" BEL "cnt_5" BEL "cnt_6" BEL "cnt_7" BEL "cnt_8" BEL
+        "cnt_9" BEL "cnt_10" BEL "cnt_11" BEL "cnt_12" BEL "cnt_13" BEL
+        "cnt_14" BEL "cnt_15" BEL "cnt_16" BEL "cnt_17" BEL "cnt_18" BEL
+        "cnt_19" BEL "cnt_20" BEL "cnt_21" BEL "cnt_22" BEL "cnt_23" BEL
+        "clk_BUFGP/BUFG";
+SCHEMATIC END;
+
