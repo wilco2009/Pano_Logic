@@ -25,9 +25,9 @@ NET "osc_clk" LOC = U10 |IOSTANDARD = LVCMOS33;
 ##============================================================
 ## LEDs
 ##============================================================
-#NET "led_green" LOC = H1  |IOSTANDARD = LVCMOS33;
-#NET "led_blue"  LOC = L1  |IOSTANDARD = LVCMOS33;
-#NET "led_red"   LOC = L3  |IOSTANDARD = LVCMOS33;   # Is this an input or an output, coming from the Micrel PHY?
+NET "led_green" LOC = H1  |IOSTANDARD = LVCMOS33;
+NET "led_blue"  LOC = L1  |IOSTANDARD = LVCMOS33;
+NET "led_red"   LOC = L3  |IOSTANDARD = LVCMOS33;   # Is this an input or an output, coming from the Micrel PHY?
 
 ##============================================================
 ## AUDIO - Wolfson CODEC

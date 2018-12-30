@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.19 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.19 secs
  
 --> Reading design: Audio_test_main.prj
 
@@ -214,13 +214,14 @@ WARNING:Xst:646 - Signal <core_state> is assigned but never used. This unconnect
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
     Found 1-bit register for signal <cmd_pending>.
+    Found 3-bit register for signal <color>.
     Found 8-bit register for signal <mstr_din>.
     Found 1-bit register for signal <start>.
     Found 1-bit register for signal <stop>.
     Found 1-bit register for signal <write>.
     Summary:
 	inferred   1 Finite State Machine(s).
-	inferred  12 D-type flip-flop(s).
+	inferred  15 D-type flip-flop(s).
 Unit <I2C_Command> synthesized.
 
 
@@ -242,9 +243,9 @@ Macro Statistics
 # Adders/Subtractors                                   : 2
  3-bit subtractor                                      : 1
  31-bit adder                                          : 1
-# Registers                                            : 19
+# Registers                                            : 20
  1-bit register                                        : 12
- 3-bit register                                        : 1
+ 3-bit register                                        : 2
  31-bit register                                       : 2
  8-bit register                                        : 4
 # Comparators                                          : 7
@@ -310,10 +311,6 @@ Optimizing FSM <I2Ccmd/I2C/stm_mstr/FSM> on signal <stm_mstr[1:22]> with one-hot
 -----------------------------------------------------
 WARNING:Xst:1426 - The value init of the FF/Latch cmd_en hinder the constant cleaning in the block Audio_test_main.
    You should achieve better results by setting this init to 0.
-WARNING:Xst:1710 - FF/Latch <i_mstr_ad_6> (without init value) has a constant value of 0 in block <I2C>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <i_mstr_ad_7> (without init value) has a constant value of 0 in block <I2C>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <mstr_din_6> (without init value) has a constant value of 0 in block <I2Ccmd>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <mstr_din_7> (without init value) has a constant value of 0 in block <I2Ccmd>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <i_in_state_6> of sequential type is unconnected in block <i2c_master_v01>.
 WARNING:Xst:2677 - Node <i_in_state_7> of sequential type is unconnected in block <i2c_master_v01>.
 WARNING:Xst:2677 - Node <i_in_state_8> of sequential type is unconnected in block <i2c_master_v01>.
@@ -348,8 +345,8 @@ Macro Statistics
 # Adders/Subtractors                                   : 2
  3-bit subtractor                                      : 1
  31-bit adder                                          : 1
-# Registers                                            : 84
- Flip-Flops                                            : 84
+# Registers                                            : 87
+ Flip-Flops                                            : 87
 # Comparators                                          : 7
  3-bit comparator greatequal                           : 1
  3-bit comparator greater                              : 1
@@ -364,12 +361,8 @@ Macro Statistics
 WARNING:Xst:1293 - FF/Latch <i_in_state_3> has a constant value of 0 in block <i2c_master_v01>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_in_state_4> has a constant value of 0 in block <i2c_master_v01>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_in_state_5> has a constant value of 0 in block <i2c_master_v01>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <mstr_din_6> (without init value) has a constant value of 0 in block <I2C_Command>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mstr_din_7> (without init value) has a constant value of 0 in block <I2C_Command>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1426 - The value init of the FF/Latch cmd_en hinder the constant cleaning in the block Audio_test_main.
    You should achieve better results by setting this init to 0.
-WARNING:Xst:1710 - FF/Latch <i_mstr_ad_6> (without init value) has a constant value of 0 in block <i2c_master_v01>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i_mstr_ad_7> (without init value) has a constant value of 0 in block <i2c_master_v01>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <I2Ccmd/I2C/i_in_state_0> of sequential type is unconnected in block <Audio_test_main>.
 WARNING:Xst:2677 - Node <I2Ccmd/I2C/i_in_state_1> of sequential type is unconnected in block <Audio_test_main>.
 WARNING:Xst:2677 - Node <I2Ccmd/I2C/i_in_state_2> of sequential type is unconnected in block <Audio_test_main>.
@@ -402,8 +395,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 93
- Flip-Flops                                            : 93
+# Registers                                            : 100
+ Flip-Flops                                            : 100
 
 =========================================================================
 
@@ -429,36 +422,38 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 4
+# IOs                              : 7
 
 Cell Usage :
-# BELS                             : 305
+# BELS                             : 325
 #      GND                         : 1
 #      INV                         : 2
 #      LUT1                        : 34
 #      LUT2                        : 16
 #      LUT2_D                      : 1
 #      LUT2_L                      : 2
-#      LUT3                        : 34
-#      LUT3_D                      : 4
-#      LUT4                        : 104
-#      LUT4_D                      : 5
+#      LUT3                        : 42
+#      LUT3_D                      : 3
+#      LUT3_L                      : 1
+#      LUT4                        : 113
+#      LUT4_D                      : 6
 #      LUT4_L                      : 6
 #      MUXCY                       : 59
-#      MUXF5                       : 5
+#      MUXF5                       : 7
 #      VCC                         : 1
 #      XORCY                       : 31
-# FlipFlops/Latches                : 93
-#      FD                          : 63
+# FlipFlops/Latches                : 100
+#      FD                          : 66
 #      FDE                         : 7
 #      FDR                         : 3
 #      FDRE                        : 1
-#      FDS                         : 16
+#      FDS                         : 20
 #      FDSE                        : 3
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 2
+# IO Buffers                       : 5
 #      IOBUF                       : 1
+#      OBUF                        : 3
 #      OBUFT                       : 1
 =========================================================================
 
@@ -467,11 +462,11 @@ Device utilization summary:
 
 Selected Device : 3s1600efg320-5 
 
- Number of Slices:                      112  out of  14752     0%  
- Number of Slice Flip Flops:             93  out of  29504     0%  
- Number of 4 input LUTs:                208  out of  29504     0%  
- Number of IOs:                           4
- Number of bonded IOBs:                   3  out of    250     1%  
+ Number of Slices:                      122  out of  14752     0%  
+ Number of Slice Flip Flops:            100  out of  29504     0%  
+ Number of 4 input LUTs:                226  out of  29504     0%  
+ Number of IOs:                           7
+ Number of bonded IOBs:                   6  out of    250     2%  
  Number of GCLKs:                         1  out of     24     4%  
 
 ---------------------------
@@ -495,7 +490,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-osc_clk                            | BUFGP                  | 93    |
+osc_clk                            | BUFGP                  | 100   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -508,7 +503,7 @@ Speed Grade: -5
 
    Minimum period: 7.227ns (Maximum Frequency: 138.373MHz)
    Minimum input arrival time before clock: 1.731ns
-   Maximum output required time after clock: 4.040ns
+   Maximum output required time after clock: 4.182ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -518,7 +513,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'osc_clk'
   Clock period: 7.227ns (frequency: 138.373MHz)
-  Total number of paths / destination ports: 6773 / 122
+  Total number of paths / destination ports: 6916 / 133
 -------------------------------------------------------------------------
 Delay:               7.227ns (Levels of Logic = 14)
   Source:            I2Ccmd/I2C/i_scl_cntr_0 (FF)
@@ -542,10 +537,10 @@ Delay:               7.227ns (Levels of Logic = 14)
      MUXCY:CI->O           1   0.051   0.000  I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>_0 (I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>1)
      MUXCY:CI->O           1   0.051   0.000  I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<8>_0 (I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<8>1)
      MUXCY:CI->O          14   0.399   0.853  I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<9> (I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<9>)
-     LUT4:I3->O            2   0.612   0.410  I2Ccmd/I2C/i_scl_cntr_mux0000<0>1_SW1 (N31)
+     LUT4:I3->O            2   0.612   0.410  I2Ccmd/I2C/i_scl_cntr_mux0000<0>1_SW1 (N28)
      LUT3_D:I2->O         15   0.612   0.867  I2Ccmd/I2C/i_scl_cntr_mux0000<0>1_1 (I2Ccmd/I2C/i_scl_cntr_mux0000<0>1)
-     LUT4:I3->O            1   0.612   0.000  I2Ccmd/I2C/i_scl_cntr_mux0000<8>1 (I2Ccmd/I2C/i_scl_cntr_mux0000<8>)
-     FD:D                      0.268          I2Ccmd/I2C/i_scl_cntr_22
+     LUT4:I3->O            1   0.612   0.000  I2Ccmd/I2C/i_scl_cntr_mux0000<9>1 (I2Ccmd/I2C/i_scl_cntr_mux0000<9>)
+     FD:D                      0.268          I2Ccmd/I2C/i_scl_cntr_21
     ----------------------------------------
     Total                      7.227ns (4.446ns logic, 2.781ns route)
                                        (61.5% logic, 38.5% route)
@@ -571,34 +566,34 @@ Offset:              1.731ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'osc_clk'
-  Total number of paths / destination ports: 4 / 2
+  Total number of paths / destination ports: 7 / 5
 -------------------------------------------------------------------------
-Offset:              4.040ns (Levels of Logic = 1)
-  Source:            I2Ccmd/I2C/Mtridata_i_sda_mstr (FF)
-  Destination:       vo_sda (PAD)
+Offset:              4.182ns (Levels of Logic = 1)
+  Source:            I2Ccmd/color_1 (FF)
+  Destination:       led_green (PAD)
   Source Clock:      osc_clk rising
 
-  Data Path: I2Ccmd/I2C/Mtridata_i_sda_mstr to vo_sda
+  Data Path: I2Ccmd/color_1 to led_green
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             1   0.514   0.357  I2Ccmd/I2C/Mtridata_i_sda_mstr (I2Ccmd/I2C/Mtridata_i_sda_mstr)
-     IOBUF:I->IO               3.169          vo_sda_IOBUF (vo_sda)
+     FDS:C->Q              4   0.514   0.499  I2Ccmd/color_1 (I2Ccmd/color_1)
+     OBUF:I->O                 3.169          led_green_OBUF (led_green)
     ----------------------------------------
-    Total                      4.040ns (3.683ns logic, 0.357ns route)
-                                       (91.2% logic, 8.8% route)
+    Total                      4.182ns (3.683ns logic, 0.499ns route)
+                                       (88.1% logic, 11.9% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.85 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.80 secs
  
 --> 
 
-Total memory usage is 4566364 kilobytes
+Total memory usage is 4566292 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   64 (   0 filtered)
+Number of warnings :   56 (   0 filtered)
 Number of infos    :    1 (   0 filtered)
 

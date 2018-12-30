@@ -26,7 +26,10 @@ module I2C_Command(
     inout sda,
     inout scl,
 	 input enable,
-	 output free
+	 output free,
+	 output r,
+	 output g,
+	 output b
     );
 
 	wire sys_rst;
@@ -36,6 +39,7 @@ module I2C_Command(
 	reg write;
 	reg send_ack;
 	reg [7:0] mstr_din;
+	reg [2:0] color;
 
 //	wire free;
 	wire rec_ack;
@@ -45,6 +49,8 @@ module I2C_Command(
 
 	assign sys_rst = 1'b0;
 	reg cmd_pending = 1'b0;
+	
+	assign {r, g, b} = color;
 
 	 	
 	i2c_master_v01 I2C (
@@ -72,6 +78,7 @@ module I2C_Command(
 			8'd0: begin // start bit
 				if (enable) cmd_pending = 1;
 				if (free && cmd_pending) begin
+					color = 3'b100;  // red
 					start = 1'b1;
 					cmd_pending = 0;
 					
@@ -97,6 +104,7 @@ module I2C_Command(
 			end
 			8'd4: begin // wait ack
 				if (rec_ack) begin
+					color = 3'b110;  // yellow
 					mstd = mstd+1;
 				end
 			end
@@ -113,6 +121,7 @@ module I2C_Command(
 			end
 			8'd7: begin // wait ack
 				if (rec_ack) begin
+					color = 3'b010;  // green
 					mstd = mstd+1;
 				end
 			end
@@ -130,6 +139,7 @@ module I2C_Command(
 			8'd10: begin // wait ack
 				if (rec_ack) begin
 					mstd = mstd+1;
+					color = 3'b001;  // blue
 				end
 			end
 			8'd11: begin // stop bit

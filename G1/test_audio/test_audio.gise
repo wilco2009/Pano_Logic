@@ -43,6 +43,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="Audio_test_main.twr" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="Audio_test_main.twx" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="Audio_test_main.unroutes" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="Audio_test_main.ut" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:fileType="FILE_XPI" xil_pn:name="Audio_test_main.xpi"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="Audio_test_main.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="Audio_test_main_envsettings.html"/>
@@ -68,15 +69,21 @@
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="I2C_Command_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="I2C_Command_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/bitgen.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="audio_test_main.bgn" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="audio_test_main.bit" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="audio_test_main.drc" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
@@ -91,6 +98,10 @@
     <transform xil_pn:end_ts="1546181760" xil_pn:in_ck="-7029288456628424961" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1546181760">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Audio_test_main.v"/>
       <outfile xil_pn:name="Audio_test_tb.v"/>
       <outfile xil_pn:name="I2C_Command.v"/>
@@ -112,6 +123,11 @@
     <transform xil_pn:end_ts="1546181763" xil_pn:in_ck="-7029288456628424961" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1546181763">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Audio_test_main.v"/>
       <outfile xil_pn:name="Audio_test_tb.v"/>
       <outfile xil_pn:name="I2C_Command.v"/>
@@ -121,6 +137,12 @@
     <transform xil_pn:end_ts="1546181768" xil_pn:in_ck="-7029288456628424961" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="5118634029014069659" xil_pn:start_ts="1546181763">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Audio_test_tb_beh.prj"/>
       <outfile xil_pn:name="Audio_test_tb_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
@@ -131,6 +153,10 @@
     <transform xil_pn:end_ts="1546181768" xil_pn:in_ck="1537917217787458230" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-2260438505056527170" xil_pn:start_ts="1546181768">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Audio_test_tb_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
@@ -163,7 +189,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1546181702" xil_pn:in_ck="-7067695352402044107" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-5749286936006500166" xil_pn:start_ts="1546181692">
+    <transform xil_pn:end_ts="1546183874" xil_pn:in_ck="-7067695352402044107" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="-5749286936006500166" xil_pn:start_ts="1546183863">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -182,11 +208,11 @@
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1546113891" xil_pn:in_ck="3854174608304562" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-3359056804650030569" xil_pn:start_ts="1546113891">
+    <transform xil_pn:end_ts="1546183874" xil_pn:in_ck="3854174608304562" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-3359056804650030569" xil_pn:start_ts="1546183874">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1546181712" xil_pn:in_ck="7267240426385255373" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="8092469446680866602" xil_pn:start_ts="1546181702">
+    <transform xil_pn:end_ts="1546183880" xil_pn:in_ck="7267240426385255373" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="8092469446680866602" xil_pn:start_ts="1546183874">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Audio_test_main.bld"/>
@@ -195,7 +221,7 @@
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1546181717" xil_pn:in_ck="7268772005370519822" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-7002665599540990466" xil_pn:start_ts="1546181712">
+    <transform xil_pn:end_ts="1546183885" xil_pn:in_ck="7268772005370519822" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-7002665599540990466" xil_pn:start_ts="1546183880">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Audio_test_main.pcf"/>
@@ -208,7 +234,7 @@
       <outfile xil_pn:name="Audio_test_main_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1546181741" xil_pn:in_ck="-4268793899698392729" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="-1229177303592316936" xil_pn:start_ts="1546181717">
+    <transform xil_pn:end_ts="1546183911" xil_pn:in_ck="-4268793899698392729" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="-1229177303592316936" xil_pn:start_ts="1546183885">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Audio_test_main.ncd"/>
@@ -222,7 +248,19 @@
       <outfile xil_pn:name="Audio_test_main_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1546181741" xil_pn:in_ck="7066603579315612554" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416187" xil_pn:start_ts="1546181737">
+    <transform xil_pn:end_ts="1546188890" xil_pn:in_ck="-6437705113088715816" xil_pn:name="TRANEXT_bitFile_spartan3e" xil_pn:prop_ck="-7817169320884990698" xil_pn:start_ts="1546188877">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Audio_test_main.ut"/>
+      <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+      <outfile xil_pn:name="audio_test_main.bgn"/>
+      <outfile xil_pn:name="audio_test_main.bit"/>
+      <outfile xil_pn:name="audio_test_main.drc"/>
+      <outfile xil_pn:name="usage_statistics_webtalk.html"/>
+      <outfile xil_pn:name="webtalk.log"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1546183911" xil_pn:in_ck="7066603579315612554" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416187" xil_pn:start_ts="1546183907">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Audio_test_main.twr"/>

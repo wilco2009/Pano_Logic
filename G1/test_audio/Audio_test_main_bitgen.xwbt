@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\aleja\OneDrive\Github\Mio\Pano\Pano_Logic\G1\test_audio\Audio_test_main.ncd
+OUTFILE=C:\Users\aleja\OneDrive\Github\Mio\Pano\Pano_Logic\G1\test_audio\Audio_test_main.bit
+FAMILY=Spartan3E
+PART=xc3s1600e-5fg320
+WORKINGDIR=C:\Users\aleja\OneDrive\Github\Mio\Pano\Pano_Logic\G1\test_audio
+LICENSE=WebPack
+USER_INFO=__0_0_0

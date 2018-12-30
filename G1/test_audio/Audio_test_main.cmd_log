@@ -277,3 +277,9 @@ ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc PanoG1.ucf -p xc3s1600e-fg320-
 map -intstyle ise -p xc3s1600e-fg320-5 -cm area -ir off -pr off -c 100 -o Audio_test_main_map.ncd Audio_test_main.ngd Audio_test_main.pcf 
 par -w -intstyle ise -ol high -t 1 Audio_test_main_map.ncd Audio_test_main.ncd Audio_test_main.pcf 
 trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Audio_test_main.twx Audio_test_main.ncd -o Audio_test_main.twr Audio_test_main.pcf -ucf PanoG1.ucf 
+xst -intstyle ise -ifn "C:/Users/aleja/OneDrive/Github/Mio/Pano/Pano_Logic/G1/test_audio/Audio_test_main.xst" -ofn "C:/Users/aleja/OneDrive/Github/Mio/Pano/Pano_Logic/G1/test_audio/Audio_test_main.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc PanoG1.ucf -p xc3s1600e-fg320-5 Audio_test_main.ngc Audio_test_main.ngd  
+map -intstyle ise -p xc3s1600e-fg320-5 -cm area -ir off -pr off -c 100 -o Audio_test_main_map.ncd Audio_test_main.ngd Audio_test_main.pcf 
+par -w -intstyle ise -ol high -t 1 Audio_test_main_map.ncd Audio_test_main.ncd Audio_test_main.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml Audio_test_main.twx Audio_test_main.ncd -o Audio_test_main.twr Audio_test_main.pcf -ucf PanoG1.ucf 
+bitgen -intstyle ise -f Audio_test_main.ut Audio_test_main.ncd 

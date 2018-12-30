@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pn" timeStamp="Sun Dec 30 15:55:17 2018">
+<application name="pn" timeStamp="Sun Dec 30 16:31:26 2018">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="33FAFB5017F84B0287E900373CE9AB20" type="project"/>
-<property name="ProjectIteration" value="45" type="project"/>
+<property name="ProjectIteration" value="46" type="project"/>
 <property name="ProjectFile" value="C:/Users/aleja/OneDrive/Github/Mio/Pano/Pano_Logic/G1/test_audio/test_audio.xise" type="project"/>
 <property name="ProjectCreationTimestamp" value="2018-12-27T10:29:58" type="project"/>
 </section>
@@ -18,7 +18,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_LastAppliedStrategy" value="Xilinx Default (unlocked)" type="design"/>
 <property name="PROP_ManualCompileOrderImp" value="false" type="design"/>
 <property name="PROP_PropSpecInProjFile" value="Store all values" type="design"/>
-<property name="PROP_SelectedInstanceHierarchicalPath" value="/Audio_test_tb" type="process"/>
+<property name="PROP_SelectedInstanceHierarchicalPath" value="/i2c_core_v02" type="process"/>
 <property name="PROP_Simulator" value="ISim (VHDL/Verilog)" type="design"/>
 <property name="PROP_SynthTopFile" value="changed" type="process"/>
 <property name="PROP_Top_Level_Module_Type" value="HDL" type="design"/>
@@ -26,10 +26,10 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_UserConstraintEditorPreference" value="Text Editor" type="process"/>
 <property name="PROP_intProjectCreationTimestamp" value="2018-12-27T10:29:58" type="design"/>
 <property name="PROP_intWbtProjectID" value="33FAFB5017F84B0287E900373CE9AB20" type="design"/>
-<property name="PROP_intWbtProjectIteration" value="45" type="process"/>
+<property name="PROP_intWbtProjectIteration" value="46" type="process"/>
 <property name="PROP_intWorkingDirLocWRTProjDir" value="Same" type="design"/>
 <property name="PROP_intWorkingDirUsed" value="No" type="design"/>
-<property name="PROP_selectedSimRootSourceNode_behav" value="work.Audio_test_tb" type="process"/>
+<property name="PROP_selectedSimRootSourceNode_behav" value="work.i2c_core_v02" type="process"/>
 <property name="PROP_xilxBitgStart_IntDone" value="true" type="process"/>
 <property name="PROP_AutoTop" value="true" type="design"/>
 <property name="PROP_DevFamily" value="Spartan3E" type="design"/>
