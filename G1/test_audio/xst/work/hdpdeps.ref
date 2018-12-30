@@ -1,0 +1,8 @@
+V3 3
+FL C:/Users/aleja/OneDrive/Github/Mio/Pano/Pano_Logic/G1/test_audio/i2c_master_v01.vhd 2018/12/30.00:04:33 P.20131013
+EN work/i2c_master_v01 1546181695 \
+      FL C:/Users/aleja/OneDrive/Github/Mio/Pano/Pano_Logic/G1/test_audio/i2c_master_v01.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177
+AR work/i2c_master_v01/arc 1546181696 \
+      FL C:/Users/aleja/OneDrive/Github/Mio/Pano/Pano_Logic/G1/test_audio/i2c_master_v01.vhd \
+      EN work/i2c_master_v01 1546181695

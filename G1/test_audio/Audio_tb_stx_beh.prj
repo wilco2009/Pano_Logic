@@ -1,0 +1,6 @@
+verilog isim_temp "i2c_master_bit_ctrl.v"
+verilog isim_temp "i2c_master_byte_ctrl.v"
+verilog isim_temp "i2c_master_top.v"
+verilog isim_temp "Audio_test_main.v"
+verilog isim_temp "Audio_tb.v"
+verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

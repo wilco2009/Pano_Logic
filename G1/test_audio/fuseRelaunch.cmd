@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/Users/aleja/OneDrive/Github/Mio/Pano/Pano_Logic/G1/test_audio/Audio_test_tb_isim_beh.exe" -prj "C:/Users/aleja/OneDrive/Github/Mio/Pano/Pano_Logic/G1/test_audio/Audio_test_tb_beh.prj" "work.Audio_test_tb" "work.glbl" 

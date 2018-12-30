@@ -1,0 +1,604 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Reading design: Audio_test_main.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Audio_test_main.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Audio_test_main"
+Output Format                      : NGC
+Target Device                      : xc3s1600e-5-fg320
+
+---- Source Options
+Top Module Name                    : Audio_test_main
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/aleja/OneDrive/Github/Mio/Pano/Pano_Logic/G1/test_audio/i2c_master_v01.vhd" in Library work.
+Architecture arc of Entity i2c_master_v01 is up to date.
+Compiling verilog file "I2C_Command.v" in library work
+Compiling verilog file "Audio_test_main.v" in library work
+Module <I2C_Command> compiled
+Module <Audio_test_main> compiled
+No errors in compilation
+Analysis of file <"Audio_test_main.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Audio_test_main> in library <work> with parameters.
+	Aud_Addr = "00110101"
+
+Analyzing hierarchy for module <I2C_Command> in library <work>.
+
+Analyzing hierarchy for entity <i2c_master_v01> in library <work> (architecture <arc>) with generics.
+	BAUD = 100000
+	CLK_FREQ = 100000000
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Audio_test_main>.
+	Aud_Addr = 8'b00110101
+Module <Audio_test_main> is correct for synthesis.
+ 
+Analyzing module <I2C_Command> in library <work>.
+Module <I2C_Command> is correct for synthesis.
+ 
+Analyzing generic Entity <i2c_master_v01> in library <work> (Architecture <arc>).
+	BAUD = 100000
+	CLK_FREQ = 100000000
+Entity <i2c_master_v01> analyzed. Unit <i2c_master_v01> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <i2c_master_v01>.
+    Related source file is "C:/Users/aleja/OneDrive/Github/Mio/Pano/Pano_Logic/G1/test_audio/i2c_master_v01.vhd".
+WARNING:Xst:646 - Signal <i_in_state<30:6>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <stm_mstr>.
+    -----------------------------------------------------------------------
+    | States             | 22                                             |
+    | Transitions        | 50                                             |
+    | Inputs             | 10                                             |
+    | Outputs            | 41                                             |
+    | Clock              | sys_clk                   (rising_edge)        |
+    | Power Up State     | mstr_idle                                      |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit register for signal <mstr_dout>.
+    Found 1-bit register for signal <i_ack_mstr>.
+    Found 3-bit register for signal <i_bit_cntr_mstr>.
+    Found 3-bit subtractor for signal <i_bit_cntr_mstr$share0000> created at line 100.
+    Found 1-bit register for signal <i_free>.
+    Found 31-bit register for signal <i_in_state>.
+    Found 8-bit register for signal <i_mstr_ad>.
+    Found 8-bit register for signal <i_mstr_rd_data>.
+    Found 1-bit register for signal <i_ready>.
+    Found 31-bit register for signal <i_scl_cntr>.
+    Found 31-bit adder for signal <i_scl_cntr$share0000> created at line 100.
+    Found 1-bit tristate buffer for signal <i_scl_mstr>.
+    Found 1-bit tristate buffer for signal <i_sda_mstr>.
+    Found 1-bit register for signal <Mtridata_i_scl_mstr> created at line 91.
+    Found 31-bit comparator greatequal for signal <Mtridata_i_scl_mstr$cmp_ge0000> created at line 155.
+    Found 31-bit comparator greatequal for signal <Mtridata_i_scl_mstr$cmp_ge0001> created at line 174.
+    Found 1-bit register for signal <Mtridata_i_sda_mstr> created at line 90.
+    Found 1-bit register for signal <Mtrien_i_scl_mstr> created at line 91.
+    Found 1-bit register for signal <Mtrien_i_sda_mstr> created at line 90.
+    Found 3-bit comparator greatequal for signal <stm_mstr$cmp_ge0000> created at line 180.
+    Found 3-bit comparator greater for signal <stm_mstr$cmp_gt0000> created at line 263.
+    Found 31-bit comparator less for signal <stm_mstr$cmp_lt0000> created at line 117.
+    Found 31-bit comparator less for signal <stm_mstr$cmp_lt0001> created at line 174.
+    Found 31-bit comparator less for signal <stm_mstr$cmp_lt0002> created at line 346.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  96 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   7 Comparator(s).
+	inferred   2 Tristate(s).
+Unit <i2c_master_v01> synthesized.
+
+
+Synthesizing Unit <I2C_Command>.
+    Related source file is "I2C_Command.v".
+WARNING:Xst:653 - Signal <send_ack> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:653 - Signal <read> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:646 - Signal <mstr_dout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <core_state> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_1> for signal <mstd>.
+    -----------------------------------------------------------------------
+    | States             | 13                                             |
+    | Transitions        | 22                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 12                                             |
+    | Clock              | sys_clk                   (rising_edge)        |
+    | Power Up State     | 00000000                                       |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <cmd_pending>.
+    Found 8-bit register for signal <mstr_din>.
+    Found 1-bit register for signal <start>.
+    Found 1-bit register for signal <stop>.
+    Found 1-bit register for signal <write>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  12 D-type flip-flop(s).
+Unit <I2C_Command> synthesized.
+
+
+Synthesizing Unit <Audio_test_main>.
+    Related source file is "Audio_test_main.v".
+WARNING:Xst:1306 - Output <DACDAT> is never assigned.
+WARNING:Xst:646 - Signal <I2C_bus_free> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <cmd_en>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <Audio_test_main> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 3-bit subtractor                                      : 1
+ 31-bit adder                                          : 1
+# Registers                                            : 19
+ 1-bit register                                        : 12
+ 3-bit register                                        : 1
+ 31-bit register                                       : 2
+ 8-bit register                                        : 4
+# Comparators                                          : 7
+ 3-bit comparator greatequal                           : 1
+ 3-bit comparator greater                              : 1
+ 31-bit comparator greatequal                          : 2
+ 31-bit comparator less                                : 3
+# Tristates                                            : 2
+ 1-bit tristate buffer                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <I2Ccmd/mstd/FSM> on signal <mstd[1:13]> with one-hot encoding.
+---------------------------
+ State    | Encoding
+---------------------------
+ 00000000 | 0000000000001
+ 00000001 | 0000000000010
+ 00000010 | 0000000000100
+ 00000011 | 0000000001000
+ 00000100 | 0000000010000
+ 00000101 | 0000000100000
+ 00000110 | 0000001000000
+ 00000111 | 0000010000000
+ 00001000 | 0000100000000
+ 00001001 | 0001000000000
+ 00001010 | 0010000000000
+ 00001011 | 0100000000000
+ 00001100 | 1000000000000
+---------------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <I2Ccmd/I2C/stm_mstr/FSM> on signal <stm_mstr[1:22]> with one-hot encoding.
+-----------------------------------------------------
+ State                     | Encoding
+-----------------------------------------------------
+ mstr_idle                 | 0000000000000000000001
+ mstr_start_cnt            | 0000000000000000000010
+ mstr_active               | 0000000000000000000100
+ mstr_wait_first_half      | 0000000000000000010000
+ mstr_wait_second_half     | 0000000000000010000000
+ mstr_wait_full            | 0000000000000100000000
+ mstr_wait_ack             | 0000000000001000000000
+ mstr_wait_ack_second_half | 0000000000010000000000
+ mstr_wait_ack_third_half  | 0000000000100000000000
+ mstr_wait_ack_fourth_half | 0000000001000000000000
+ mstr_rd_wait_low          | 0000000000000000001000
+ mstr_rd_wait_half         | 0000000010000000000000
+ mstr_rd_read              | 0000000100000000000000
+ mstr_stop                 | 0010000000000000000000
+ mstr_rd_wait_ack_bit      | 0000100000000000000000
+ mstr_rd_wait_ack          | 0000001000000000000000
+ mstr_rd_get_ack           | 0000010000000000000000
+ mstr_restart              | 0000000000000001000000
+ mstr_gap                  | 0100000000000000000000
+ mstr_stop_1               | 0000000000000000100000
+ mstr_rd_wait_last_half    | 0001000000000000000000
+ mstr_restart_clk_high     | 1000000000000000000000
+-----------------------------------------------------
+WARNING:Xst:1426 - The value init of the FF/Latch cmd_en hinder the constant cleaning in the block Audio_test_main.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1710 - FF/Latch <i_mstr_ad_6> (without init value) has a constant value of 0 in block <I2C>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <i_mstr_ad_7> (without init value) has a constant value of 0 in block <I2C>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <mstr_din_6> (without init value) has a constant value of 0 in block <I2Ccmd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <mstr_din_7> (without init value) has a constant value of 0 in block <I2Ccmd>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <i_in_state_6> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_7> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_8> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_9> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_10> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_11> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_12> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_13> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_14> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_15> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_16> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_17> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_18> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_19> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_20> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_21> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_22> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_23> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_24> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_25> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_26> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_27> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_28> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_29> of sequential type is unconnected in block <i2c_master_v01>.
+WARNING:Xst:2677 - Node <i_in_state_30> of sequential type is unconnected in block <i2c_master_v01>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 2
+# Adders/Subtractors                                   : 2
+ 3-bit subtractor                                      : 1
+ 31-bit adder                                          : 1
+# Registers                                            : 84
+ Flip-Flops                                            : 84
+# Comparators                                          : 7
+ 3-bit comparator greatequal                           : 1
+ 3-bit comparator greater                              : 1
+ 31-bit comparator greatequal                          : 2
+ 31-bit comparator less                                : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <i_in_state_3> has a constant value of 0 in block <i2c_master_v01>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_in_state_4> has a constant value of 0 in block <i2c_master_v01>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <i_in_state_5> has a constant value of 0 in block <i2c_master_v01>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <mstr_din_6> (without init value) has a constant value of 0 in block <I2C_Command>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mstr_din_7> (without init value) has a constant value of 0 in block <I2C_Command>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1426 - The value init of the FF/Latch cmd_en hinder the constant cleaning in the block Audio_test_main.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1710 - FF/Latch <i_mstr_ad_6> (without init value) has a constant value of 0 in block <i2c_master_v01>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <i_mstr_ad_7> (without init value) has a constant value of 0 in block <i2c_master_v01>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <I2Ccmd/I2C/i_in_state_0> of sequential type is unconnected in block <Audio_test_main>.
+WARNING:Xst:2677 - Node <I2Ccmd/I2C/i_in_state_1> of sequential type is unconnected in block <Audio_test_main>.
+WARNING:Xst:2677 - Node <I2Ccmd/I2C/i_in_state_2> of sequential type is unconnected in block <Audio_test_main>.
+WARNING:Xst:2677 - Node <I2Ccmd/I2C/i_mstr_rd_data_0> of sequential type is unconnected in block <Audio_test_main>.
+WARNING:Xst:2677 - Node <I2Ccmd/I2C/i_mstr_rd_data_1> of sequential type is unconnected in block <Audio_test_main>.
+WARNING:Xst:2677 - Node <I2Ccmd/I2C/i_mstr_rd_data_2> of sequential type is unconnected in block <Audio_test_main>.
+WARNING:Xst:2677 - Node <I2Ccmd/I2C/i_mstr_rd_data_3> of sequential type is unconnected in block <Audio_test_main>.
+WARNING:Xst:2677 - Node <I2Ccmd/I2C/i_mstr_rd_data_4> of sequential type is unconnected in block <Audio_test_main>.
+WARNING:Xst:2677 - Node <I2Ccmd/I2C/i_mstr_rd_data_5> of sequential type is unconnected in block <Audio_test_main>.
+WARNING:Xst:2677 - Node <I2Ccmd/I2C/i_mstr_rd_data_6> of sequential type is unconnected in block <Audio_test_main>.
+WARNING:Xst:2677 - Node <I2Ccmd/I2C/i_mstr_rd_data_7> of sequential type is unconnected in block <Audio_test_main>.
+WARNING:Xst:2677 - Node <I2Ccmd/I2C/mstr_dout_0> of sequential type is unconnected in block <Audio_test_main>.
+WARNING:Xst:2677 - Node <I2Ccmd/I2C/mstr_dout_1> of sequential type is unconnected in block <Audio_test_main>.
+WARNING:Xst:2677 - Node <I2Ccmd/I2C/mstr_dout_2> of sequential type is unconnected in block <Audio_test_main>.
+WARNING:Xst:2677 - Node <I2Ccmd/I2C/mstr_dout_3> of sequential type is unconnected in block <Audio_test_main>.
+WARNING:Xst:2677 - Node <I2Ccmd/I2C/mstr_dout_4> of sequential type is unconnected in block <Audio_test_main>.
+WARNING:Xst:2677 - Node <I2Ccmd/I2C/mstr_dout_5> of sequential type is unconnected in block <Audio_test_main>.
+WARNING:Xst:2677 - Node <I2Ccmd/I2C/mstr_dout_6> of sequential type is unconnected in block <Audio_test_main>.
+WARNING:Xst:2677 - Node <I2Ccmd/I2C/mstr_dout_7> of sequential type is unconnected in block <Audio_test_main>.
+
+Optimizing unit <Audio_test_main> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Audio_test_main, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 93
+ Flip-Flops                                            : 93
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Audio_test_main.ngr
+Top Level Output File Name         : Audio_test_main
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 4
+
+Cell Usage :
+# BELS                             : 305
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 34
+#      LUT2                        : 16
+#      LUT2_D                      : 1
+#      LUT2_L                      : 2
+#      LUT3                        : 34
+#      LUT3_D                      : 4
+#      LUT4                        : 104
+#      LUT4_D                      : 5
+#      LUT4_L                      : 6
+#      MUXCY                       : 59
+#      MUXF5                       : 5
+#      VCC                         : 1
+#      XORCY                       : 31
+# FlipFlops/Latches                : 93
+#      FD                          : 63
+#      FDE                         : 7
+#      FDR                         : 3
+#      FDRE                        : 1
+#      FDS                         : 16
+#      FDSE                        : 3
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 2
+#      IOBUF                       : 1
+#      OBUFT                       : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1600efg320-5 
+
+ Number of Slices:                      112  out of  14752     0%  
+ Number of Slice Flip Flops:             93  out of  29504     0%  
+ Number of 4 input LUTs:                208  out of  29504     0%  
+ Number of IOs:                           4
+ Number of bonded IOBs:                   3  out of    250     1%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+osc_clk                            | BUFGP                  | 93    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 7.227ns (Maximum Frequency: 138.373MHz)
+   Minimum input arrival time before clock: 1.731ns
+   Maximum output required time after clock: 4.040ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'osc_clk'
+  Clock period: 7.227ns (frequency: 138.373MHz)
+  Total number of paths / destination ports: 6773 / 122
+-------------------------------------------------------------------------
+Delay:               7.227ns (Levels of Logic = 14)
+  Source:            I2Ccmd/I2C/i_scl_cntr_0 (FF)
+  Destination:       I2Ccmd/I2C/i_scl_cntr_0 (FF)
+  Source Clock:      osc_clk rising
+  Destination Clock: osc_clk rising
+
+  Data Path: I2Ccmd/I2C/i_scl_cntr_0 to I2Ccmd/I2C/i_scl_cntr_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               4   0.514   0.651  I2Ccmd/I2C/i_scl_cntr_0 (I2Ccmd/I2C/i_scl_cntr_0)
+     LUT2:I0->O            1   0.612   0.000  I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_lut<0>1 (I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_lut<0>1)
+     MUXCY:S->O            1   0.404   0.000  I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<0>_0 (I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<0>1)
+     MUXCY:CI->O           1   0.051   0.000  I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<1>_0 (I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<1>1)
+     MUXCY:CI->O           1   0.051   0.000  I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<2>_0 (I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<2>1)
+     MUXCY:CI->O           1   0.051   0.000  I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>_0 (I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>1)
+     MUXCY:CI->O           1   0.051   0.000  I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<4>_0 (I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<4>1)
+     MUXCY:CI->O           1   0.051   0.000  I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>_0 (I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>1)
+     MUXCY:CI->O           1   0.051   0.000  I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<6>_0 (I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<6>1)
+     MUXCY:CI->O           1   0.051   0.000  I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>_0 (I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>1)
+     MUXCY:CI->O           1   0.051   0.000  I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<8>_0 (I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<8>1)
+     MUXCY:CI->O          14   0.399   0.853  I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<9> (I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<9>)
+     LUT4:I3->O            2   0.612   0.410  I2Ccmd/I2C/i_scl_cntr_mux0000<0>1_SW1 (N31)
+     LUT3_D:I2->O         15   0.612   0.867  I2Ccmd/I2C/i_scl_cntr_mux0000<0>1_1 (I2Ccmd/I2C/i_scl_cntr_mux0000<0>1)
+     LUT4:I3->O            1   0.612   0.000  I2Ccmd/I2C/i_scl_cntr_mux0000<8>1 (I2Ccmd/I2C/i_scl_cntr_mux0000<8>)
+     FD:D                      0.268          I2Ccmd/I2C/i_scl_cntr_22
+    ----------------------------------------
+    Total                      7.227ns (4.446ns logic, 2.781ns route)
+                                       (61.5% logic, 38.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'osc_clk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 1)
+  Source:            vo_sda (PAD)
+  Destination:       I2Ccmd/I2C/i_ack_mstr (FF)
+  Destination Clock: osc_clk rising
+
+  Data Path: vo_sda to I2Ccmd/I2C/i_ack_mstr
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O           1   1.106   0.357  vo_sda_IOBUF (N17)
+     FDE:D                     0.268          I2Ccmd/I2C/i_ack_mstr
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'osc_clk'
+  Total number of paths / destination ports: 4 / 2
+-------------------------------------------------------------------------
+Offset:              4.040ns (Levels of Logic = 1)
+  Source:            I2Ccmd/I2C/Mtridata_i_sda_mstr (FF)
+  Destination:       vo_sda (PAD)
+  Source Clock:      osc_clk rising
+
+  Data Path: I2Ccmd/I2C/Mtridata_i_sda_mstr to vo_sda
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             1   0.514   0.357  I2Ccmd/I2C/Mtridata_i_sda_mstr (I2Ccmd/I2C/Mtridata_i_sda_mstr)
+     IOBUF:I->IO               3.169          vo_sda_IOBUF (vo_sda)
+    ----------------------------------------
+    Total                      4.040ns (3.683ns logic, 0.357ns route)
+                                       (91.2% logic, 8.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.85 secs
+ 
+--> 
+
+Total memory usage is 4566364 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   64 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

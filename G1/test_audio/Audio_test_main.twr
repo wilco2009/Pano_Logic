@@ -1,0 +1,629 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 5
+-n 3 -fastpaths -xml Audio_test_main.twx Audio_test_main.ncd -o
+Audio_test_main.twr Audio_test_main.pcf -ucf PanoG1.ucf
+
+Design file:              Audio_test_main.ncd
+Physical constraint file: Audio_test_main.pcf
+Device,package,speed:     xc3s1600e,fg320,-5 (PRODUCTION 1.27 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: TS_osc_clk = PERIOD TIMEGRP "osc_clk" 10 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 6773 paths analyzed, 353 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   8.774ns.
+--------------------------------------------------------------------------------
+
+Paths for end point I2Ccmd/I2C/i_scl_cntr_7 (SLICE_X42Y69.F3), 111 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     1.226ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               I2Ccmd/I2C/i_scl_cntr_9 (FF)
+  Destination:          I2Ccmd/I2C/i_scl_cntr_7 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.772ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.002ns (0.212 - 0.214)
+  Source Clock:         osc_clk_BUFGP rising at 0.000ns
+  Destination Clock:    osc_clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: I2Ccmd/I2C/i_scl_cntr_9 to I2Ccmd/I2C/i_scl_cntr_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X42Y77.YQ      Tcko                  0.567   I2Ccmd/I2C/i_scl_cntr<20>
+                                                       I2Ccmd/I2C/i_scl_cntr_9
+    SLICE_X41Y73.F1      net (fanout=5)        1.245   I2Ccmd/I2C/i_scl_cntr<9>
+    SLICE_X41Y73.COUT    Topcyf                1.011   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_lut<2>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<2>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>
+    SLICE_X41Y74.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>
+    SLICE_X41Y74.COUT    Tbyp                  0.103   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<4>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>
+    SLICE_X41Y75.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>
+    SLICE_X41Y75.COUT    Tbyp                  0.103   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<6>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>
+    SLICE_X41Y76.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>
+    SLICE_X41Y76.XB      Tcinxb                0.352   I2Ccmd/I2C/i_scl_cntr<30>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<8>
+    SLICE_X32Y77.F1      net (fanout=3)        0.906   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<8>
+    SLICE_X32Y77.X       Tilo                  0.660   N31
+                                                       I2Ccmd/I2C/i_scl_cntr_mux0000<0>1_SW1
+    SLICE_X40Y77.G2      net (fanout=2)        0.691   N31
+    SLICE_X40Y77.Y       Tilo                  0.660   I2Ccmd/I2C/i_scl_cntr<21>
+                                                       I2Ccmd/I2C/i_scl_cntr_mux0000<0>1_1
+    SLICE_X42Y69.F3      net (fanout=16)       1.698   I2Ccmd/I2C/i_scl_cntr_mux0000<0>1
+    SLICE_X42Y69.CLK     Tfck                  0.776   I2Ccmd/I2C/i_scl_cntr<7>
+                                                       I2Ccmd/I2C/i_scl_cntr_mux0000<23>1
+                                                       I2Ccmd/I2C/i_scl_cntr_7
+    -------------------------------------------------  ---------------------------
+    Total                                      8.772ns (4.232ns logic, 4.540ns route)
+                                                       (48.2% logic, 51.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.431ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               I2Ccmd/I2C/i_scl_cntr_3 (FF)
+  Destination:          I2Ccmd/I2C/i_scl_cntr_7 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.569ns (Levels of Logic = 8)
+  Clock Path Skew:      0.000ns
+  Source Clock:         osc_clk_BUFGP rising at 0.000ns
+  Destination Clock:    osc_clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: I2Ccmd/I2C/i_scl_cntr_3 to I2Ccmd/I2C/i_scl_cntr_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X42Y66.XQ      Tcko                  0.515   I2Ccmd/I2C/i_scl_cntr<3>
+                                                       I2Ccmd/I2C/i_scl_cntr_3
+    SLICE_X41Y72.F1      net (fanout=5)        0.991   I2Ccmd/I2C/i_scl_cntr<3>
+    SLICE_X41Y72.COUT    Topcyf                1.011   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<1>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_lut<0>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<0>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<1>
+    SLICE_X41Y73.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<1>
+    SLICE_X41Y73.COUT    Tbyp                  0.103   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<2>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>
+    SLICE_X41Y74.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>
+    SLICE_X41Y74.COUT    Tbyp                  0.103   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<4>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>
+    SLICE_X41Y75.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>
+    SLICE_X41Y75.COUT    Tbyp                  0.103   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<6>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>
+    SLICE_X41Y76.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>
+    SLICE_X41Y76.XB      Tcinxb                0.352   I2Ccmd/I2C/i_scl_cntr<30>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<8>
+    SLICE_X32Y77.F1      net (fanout=3)        0.906   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<8>
+    SLICE_X32Y77.X       Tilo                  0.660   N31
+                                                       I2Ccmd/I2C/i_scl_cntr_mux0000<0>1_SW1
+    SLICE_X40Y77.G2      net (fanout=2)        0.691   N31
+    SLICE_X40Y77.Y       Tilo                  0.660   I2Ccmd/I2C/i_scl_cntr<21>
+                                                       I2Ccmd/I2C/i_scl_cntr_mux0000<0>1_1
+    SLICE_X42Y69.F3      net (fanout=16)       1.698   I2Ccmd/I2C/i_scl_cntr_mux0000<0>1
+    SLICE_X42Y69.CLK     Tfck                  0.776   I2Ccmd/I2C/i_scl_cntr<7>
+                                                       I2Ccmd/I2C/i_scl_cntr_mux0000<23>1
+                                                       I2Ccmd/I2C/i_scl_cntr_7
+    -------------------------------------------------  ---------------------------
+    Total                                      8.569ns (4.283ns logic, 4.286ns route)
+                                                       (50.0% logic, 50.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.530ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               I2Ccmd/I2C/i_scl_cntr_6 (FF)
+  Destination:          I2Ccmd/I2C/i_scl_cntr_7 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.470ns (Levels of Logic = 7)
+  Clock Path Skew:      0.000ns
+  Source Clock:         osc_clk_BUFGP rising at 0.000ns
+  Destination Clock:    osc_clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: I2Ccmd/I2C/i_scl_cntr_6 to I2Ccmd/I2C/i_scl_cntr_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X42Y69.YQ      Tcko                  0.567   I2Ccmd/I2C/i_scl_cntr<7>
+                                                       I2Ccmd/I2C/i_scl_cntr_6
+    SLICE_X41Y73.F4      net (fanout=5)        0.943   I2Ccmd/I2C/i_scl_cntr<6>
+    SLICE_X41Y73.COUT    Topcyf                1.011   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_lut<2>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<2>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>
+    SLICE_X41Y74.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>
+    SLICE_X41Y74.COUT    Tbyp                  0.103   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<4>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>
+    SLICE_X41Y75.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>
+    SLICE_X41Y75.COUT    Tbyp                  0.103   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<6>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>
+    SLICE_X41Y76.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>
+    SLICE_X41Y76.XB      Tcinxb                0.352   I2Ccmd/I2C/i_scl_cntr<30>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<8>
+    SLICE_X32Y77.F1      net (fanout=3)        0.906   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<8>
+    SLICE_X32Y77.X       Tilo                  0.660   N31
+                                                       I2Ccmd/I2C/i_scl_cntr_mux0000<0>1_SW1
+    SLICE_X40Y77.G2      net (fanout=2)        0.691   N31
+    SLICE_X40Y77.Y       Tilo                  0.660   I2Ccmd/I2C/i_scl_cntr<21>
+                                                       I2Ccmd/I2C/i_scl_cntr_mux0000<0>1_1
+    SLICE_X42Y69.F3      net (fanout=16)       1.698   I2Ccmd/I2C/i_scl_cntr_mux0000<0>1
+    SLICE_X42Y69.CLK     Tfck                  0.776   I2Ccmd/I2C/i_scl_cntr<7>
+                                                       I2Ccmd/I2C/i_scl_cntr_mux0000<23>1
+                                                       I2Ccmd/I2C/i_scl_cntr_7
+    -------------------------------------------------  ---------------------------
+    Total                                      8.470ns (4.232ns logic, 4.238ns route)
+                                                       (50.0% logic, 50.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point I2Ccmd/I2C/i_mstr_ad_1 (SLICE_X15Y70.F3), 40 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     1.333ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               I2Ccmd/I2C/i_scl_cntr_6 (FF)
+  Destination:          I2Ccmd/I2C/i_mstr_ad_1 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.659ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.008ns (0.149 - 0.157)
+  Source Clock:         osc_clk_BUFGP rising at 0.000ns
+  Destination Clock:    osc_clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: I2Ccmd/I2C/i_scl_cntr_6 to I2Ccmd/I2C/i_mstr_ad_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X42Y69.YQ      Tcko                  0.567   I2Ccmd/I2C/i_scl_cntr<7>
+                                                       I2Ccmd/I2C/i_scl_cntr_6
+    SLICE_X40Y73.F2      net (fanout=5)        1.242   I2Ccmd/I2C/i_scl_cntr<6>
+    SLICE_X40Y73.COUT    Topcyf                1.011   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>2
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_lut<2>2
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<2>_1
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>_1
+    SLICE_X40Y74.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>2
+    SLICE_X40Y74.COUT    Tbyp                  0.113   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>2
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<4>_1
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>_1
+    SLICE_X40Y75.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>2
+    SLICE_X40Y75.COUT    Tbyp                  0.113   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>2
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<6>_1
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>_1
+    SLICE_X40Y76.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>2
+    SLICE_X40Y76.COUT    Tbyp                  0.113   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<9>1
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<8>_1
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<9>_0
+    SLICE_X15Y77.BX      net (fanout=33)       3.400   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<9>1
+    SLICE_X15Y77.X       Tbxx                  0.641   N11
+                                                       I2Ccmd/I2C/i_mstr_ad_mux0001<0>1
+    SLICE_X15Y70.F3      net (fanout=6)        0.731   N11
+    SLICE_X15Y70.CLK     Tfck                  0.728   I2Ccmd/I2C/i_mstr_ad<1>
+                                                       I2Ccmd/I2C/i_mstr_ad_mux0001<1>1
+                                                       I2Ccmd/I2C/i_mstr_ad_1
+    -------------------------------------------------  ---------------------------
+    Total                                      8.659ns (3.286ns logic, 5.373ns route)
+                                                       (37.9% logic, 62.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.624ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               I2Ccmd/I2C/i_scl_cntr_22 (FF)
+  Destination:          I2Ccmd/I2C/i_mstr_ad_1 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.366ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.010ns (0.204 - 0.214)
+  Source Clock:         osc_clk_BUFGP rising at 0.000ns
+  Destination Clock:    osc_clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: I2Ccmd/I2C/i_scl_cntr_22 to I2Ccmd/I2C/i_mstr_ad_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X42Y76.YQ      Tcko                  0.567   I2Ccmd/I2C/i_scl_cntr<23>
+                                                       I2Ccmd/I2C/i_scl_cntr_22
+    SLICE_X40Y75.G2      net (fanout=5)        1.202   I2Ccmd/I2C/i_scl_cntr<22>
+    SLICE_X40Y75.COUT    Topcyg                0.984   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>2
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_lut<7>2
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>_1
+    SLICE_X40Y76.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>2
+    SLICE_X40Y76.COUT    Tbyp                  0.113   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<9>1
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<8>_1
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<9>_0
+    SLICE_X15Y77.BX      net (fanout=33)       3.400   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<9>1
+    SLICE_X15Y77.X       Tbxx                  0.641   N11
+                                                       I2Ccmd/I2C/i_mstr_ad_mux0001<0>1
+    SLICE_X15Y70.F3      net (fanout=6)        0.731   N11
+    SLICE_X15Y70.CLK     Tfck                  0.728   I2Ccmd/I2C/i_mstr_ad<1>
+                                                       I2Ccmd/I2C/i_mstr_ad_mux0001<1>1
+                                                       I2Ccmd/I2C/i_mstr_ad_1
+    -------------------------------------------------  ---------------------------
+    Total                                      8.366ns (3.033ns logic, 5.333ns route)
+                                                       (36.3% logic, 63.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.629ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               I2Ccmd/I2C/i_scl_cntr_0 (FF)
+  Destination:          I2Ccmd/I2C/i_mstr_ad_1 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.366ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.005ns (0.149 - 0.154)
+  Source Clock:         osc_clk_BUFGP rising at 0.000ns
+  Destination Clock:    osc_clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: I2Ccmd/I2C/i_scl_cntr_0 to I2Ccmd/I2C/i_mstr_ad_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X42Y67.YQ      Tcko                  0.567   I2Ccmd/I2C/i_scl_cntr<1>
+                                                       I2Ccmd/I2C/i_scl_cntr_0
+    SLICE_X40Y72.F4      net (fanout=4)        0.836   I2Ccmd/I2C/i_scl_cntr<0>
+    SLICE_X40Y72.COUT    Topcyf                1.011   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<1>2
+                                                       I2Ccmd/I2C/i_scl_cntr<0>_rt
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<0>_1
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<1>_1
+    SLICE_X40Y73.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<1>2
+    SLICE_X40Y73.COUT    Tbyp                  0.113   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>2
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<2>_1
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>_1
+    SLICE_X40Y74.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>2
+    SLICE_X40Y74.COUT    Tbyp                  0.113   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>2
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<4>_1
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>_1
+    SLICE_X40Y75.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>2
+    SLICE_X40Y75.COUT    Tbyp                  0.113   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>2
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<6>_1
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>_1
+    SLICE_X40Y76.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>2
+    SLICE_X40Y76.COUT    Tbyp                  0.113   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<9>1
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<8>_1
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<9>_0
+    SLICE_X15Y77.BX      net (fanout=33)       3.400   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<9>1
+    SLICE_X15Y77.X       Tbxx                  0.641   N11
+                                                       I2Ccmd/I2C/i_mstr_ad_mux0001<0>1
+    SLICE_X15Y70.F3      net (fanout=6)        0.731   N11
+    SLICE_X15Y70.CLK     Tfck                  0.728   I2Ccmd/I2C/i_mstr_ad<1>
+                                                       I2Ccmd/I2C/i_mstr_ad_mux0001<1>1
+                                                       I2Ccmd/I2C/i_mstr_ad_1
+    -------------------------------------------------  ---------------------------
+    Total                                      8.366ns (3.399ns logic, 4.967ns route)
+                                                       (40.6% logic, 59.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point I2Ccmd/I2C/i_scl_cntr_4 (SLICE_X42Y68.G1), 111 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     1.394ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               I2Ccmd/I2C/i_scl_cntr_9 (FF)
+  Destination:          I2Ccmd/I2C/i_scl_cntr_4 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.604ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.002ns (0.212 - 0.214)
+  Source Clock:         osc_clk_BUFGP rising at 0.000ns
+  Destination Clock:    osc_clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: I2Ccmd/I2C/i_scl_cntr_9 to I2Ccmd/I2C/i_scl_cntr_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X42Y77.YQ      Tcko                  0.567   I2Ccmd/I2C/i_scl_cntr<20>
+                                                       I2Ccmd/I2C/i_scl_cntr_9
+    SLICE_X41Y73.F1      net (fanout=5)        1.245   I2Ccmd/I2C/i_scl_cntr<9>
+    SLICE_X41Y73.COUT    Topcyf                1.011   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_lut<2>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<2>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>
+    SLICE_X41Y74.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>
+    SLICE_X41Y74.COUT    Tbyp                  0.103   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<4>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>
+    SLICE_X41Y75.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>
+    SLICE_X41Y75.COUT    Tbyp                  0.103   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<6>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>
+    SLICE_X41Y76.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>
+    SLICE_X41Y76.XB      Tcinxb                0.352   I2Ccmd/I2C/i_scl_cntr<30>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<8>
+    SLICE_X32Y77.F1      net (fanout=3)        0.906   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<8>
+    SLICE_X32Y77.X       Tilo                  0.660   N31
+                                                       I2Ccmd/I2C/i_scl_cntr_mux0000<0>1_SW1
+    SLICE_X40Y77.G2      net (fanout=2)        0.691   N31
+    SLICE_X40Y77.Y       Tilo                  0.660   I2Ccmd/I2C/i_scl_cntr<21>
+                                                       I2Ccmd/I2C/i_scl_cntr_mux0000<0>1_1
+    SLICE_X42Y68.G1      net (fanout=16)       1.530   I2Ccmd/I2C/i_scl_cntr_mux0000<0>1
+    SLICE_X42Y68.CLK     Tgck                  0.776   I2Ccmd/I2C/i_scl_cntr<5>
+                                                       I2Ccmd/I2C/i_scl_cntr_mux0000<26>1
+                                                       I2Ccmd/I2C/i_scl_cntr_4
+    -------------------------------------------------  ---------------------------
+    Total                                      8.604ns (4.232ns logic, 4.372ns route)
+                                                       (49.2% logic, 50.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.599ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               I2Ccmd/I2C/i_scl_cntr_3 (FF)
+  Destination:          I2Ccmd/I2C/i_scl_cntr_4 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.401ns (Levels of Logic = 8)
+  Clock Path Skew:      0.000ns
+  Source Clock:         osc_clk_BUFGP rising at 0.000ns
+  Destination Clock:    osc_clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: I2Ccmd/I2C/i_scl_cntr_3 to I2Ccmd/I2C/i_scl_cntr_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X42Y66.XQ      Tcko                  0.515   I2Ccmd/I2C/i_scl_cntr<3>
+                                                       I2Ccmd/I2C/i_scl_cntr_3
+    SLICE_X41Y72.F1      net (fanout=5)        0.991   I2Ccmd/I2C/i_scl_cntr<3>
+    SLICE_X41Y72.COUT    Topcyf                1.011   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<1>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_lut<0>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<0>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<1>
+    SLICE_X41Y73.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<1>
+    SLICE_X41Y73.COUT    Tbyp                  0.103   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<2>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>
+    SLICE_X41Y74.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>
+    SLICE_X41Y74.COUT    Tbyp                  0.103   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<4>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>
+    SLICE_X41Y75.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>
+    SLICE_X41Y75.COUT    Tbyp                  0.103   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<6>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>
+    SLICE_X41Y76.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>
+    SLICE_X41Y76.XB      Tcinxb                0.352   I2Ccmd/I2C/i_scl_cntr<30>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<8>
+    SLICE_X32Y77.F1      net (fanout=3)        0.906   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<8>
+    SLICE_X32Y77.X       Tilo                  0.660   N31
+                                                       I2Ccmd/I2C/i_scl_cntr_mux0000<0>1_SW1
+    SLICE_X40Y77.G2      net (fanout=2)        0.691   N31
+    SLICE_X40Y77.Y       Tilo                  0.660   I2Ccmd/I2C/i_scl_cntr<21>
+                                                       I2Ccmd/I2C/i_scl_cntr_mux0000<0>1_1
+    SLICE_X42Y68.G1      net (fanout=16)       1.530   I2Ccmd/I2C/i_scl_cntr_mux0000<0>1
+    SLICE_X42Y68.CLK     Tgck                  0.776   I2Ccmd/I2C/i_scl_cntr<5>
+                                                       I2Ccmd/I2C/i_scl_cntr_mux0000<26>1
+                                                       I2Ccmd/I2C/i_scl_cntr_4
+    -------------------------------------------------  ---------------------------
+    Total                                      8.401ns (4.283ns logic, 4.118ns route)
+                                                       (51.0% logic, 49.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     1.698ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               I2Ccmd/I2C/i_scl_cntr_6 (FF)
+  Destination:          I2Ccmd/I2C/i_scl_cntr_4 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      8.302ns (Levels of Logic = 7)
+  Clock Path Skew:      0.000ns
+  Source Clock:         osc_clk_BUFGP rising at 0.000ns
+  Destination Clock:    osc_clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: I2Ccmd/I2C/i_scl_cntr_6 to I2Ccmd/I2C/i_scl_cntr_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X42Y69.YQ      Tcko                  0.567   I2Ccmd/I2C/i_scl_cntr<7>
+                                                       I2Ccmd/I2C/i_scl_cntr_6
+    SLICE_X41Y73.F4      net (fanout=5)        0.943   I2Ccmd/I2C/i_scl_cntr<6>
+    SLICE_X41Y73.COUT    Topcyf                1.011   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_lut<2>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<2>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>
+    SLICE_X41Y74.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<3>
+    SLICE_X41Y74.COUT    Tbyp                  0.103   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<4>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>
+    SLICE_X41Y75.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<5>
+    SLICE_X41Y75.COUT    Tbyp                  0.103   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<6>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>
+    SLICE_X41Y76.CIN     net (fanout=1)        0.000   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<7>
+    SLICE_X41Y76.XB      Tcinxb                0.352   I2Ccmd/I2C/i_scl_cntr<30>
+                                                       I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<8>
+    SLICE_X32Y77.F1      net (fanout=3)        0.906   I2Ccmd/I2C/Mcompar_stm_mstr_cmp_lt0002_cy<8>
+    SLICE_X32Y77.X       Tilo                  0.660   N31
+                                                       I2Ccmd/I2C/i_scl_cntr_mux0000<0>1_SW1
+    SLICE_X40Y77.G2      net (fanout=2)        0.691   N31
+    SLICE_X40Y77.Y       Tilo                  0.660   I2Ccmd/I2C/i_scl_cntr<21>
+                                                       I2Ccmd/I2C/i_scl_cntr_mux0000<0>1_1
+    SLICE_X42Y68.G1      net (fanout=16)       1.530   I2Ccmd/I2C/i_scl_cntr_mux0000<0>1
+    SLICE_X42Y68.CLK     Tgck                  0.776   I2Ccmd/I2C/i_scl_cntr<5>
+                                                       I2Ccmd/I2C/i_scl_cntr_mux0000<26>1
+                                                       I2Ccmd/I2C/i_scl_cntr_4
+    -------------------------------------------------  ---------------------------
+    Total                                      8.302ns (4.232ns logic, 4.070ns route)
+                                                       (51.0% logic, 49.0% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_osc_clk = PERIOD TIMEGRP "osc_clk" 10 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point I2Ccmd/mstd_FSM_FFd1 (SLICE_X19Y65.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.960ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               I2Ccmd/mstd_FSM_FFd2 (FF)
+  Destination:          I2Ccmd/mstd_FSM_FFd1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.943ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.017ns (0.048 - 0.065)
+  Source Clock:         osc_clk_BUFGP rising at 10.000ns
+  Destination Clock:    osc_clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: I2Ccmd/mstd_FSM_FFd2 to I2Ccmd/mstd_FSM_FFd1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y65.YQ      Tcko                  0.454   I2Ccmd/mstd_FSM_FFd2
+                                                       I2Ccmd/mstd_FSM_FFd2
+    SLICE_X19Y65.BY      net (fanout=2)        0.372   I2Ccmd/mstd_FSM_FFd2
+    SLICE_X19Y65.CLK     Tckdi       (-Th)    -0.117   I2Ccmd/mstd_FSM_FFd1
+                                                       I2Ccmd/mstd_FSM_FFd1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.943ns (0.571ns logic, 0.372ns route)
+                                                       (60.6% logic, 39.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point I2Ccmd/mstd_FSM_FFd2 (SLICE_X16Y65.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.975ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               I2Ccmd/mstd_FSM_FFd3 (FF)
+  Destination:          I2Ccmd/mstd_FSM_FFd2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.975ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         osc_clk_BUFGP rising at 10.000ns
+  Destination Clock:    osc_clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: I2Ccmd/mstd_FSM_FFd3 to I2Ccmd/mstd_FSM_FFd2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y64.YQ      Tcko                  0.454   I2Ccmd/mstd_FSM_FFd6
+                                                       I2Ccmd/mstd_FSM_FFd3
+    SLICE_X16Y65.BY      net (fanout=3)        0.389   I2Ccmd/mstd_FSM_FFd3
+    SLICE_X16Y65.CLK     Tckdi       (-Th)    -0.132   I2Ccmd/mstd_FSM_FFd2
+                                                       I2Ccmd/mstd_FSM_FFd2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.975ns (0.586ns logic, 0.389ns route)
+                                                       (60.1% logic, 39.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point I2Ccmd/cmd_pending (SLICE_X22Y64.CE), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.072ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               I2Ccmd/mstd_FSM_FFd13 (FF)
+  Destination:          I2Ccmd/cmd_pending (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.064ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.008ns (0.029 - 0.037)
+  Source Clock:         osc_clk_BUFGP rising at 10.000ns
+  Destination Clock:    osc_clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: I2Ccmd/mstd_FSM_FFd13 to I2Ccmd/cmd_pending
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y64.YQ      Tcko                  0.454   I2Ccmd/mstd_FSM_FFd13
+                                                       I2Ccmd/mstd_FSM_FFd13
+    SLICE_X22Y64.CE      net (fanout=5)        0.539   I2Ccmd/mstd_FSM_FFd13
+    SLICE_X22Y64.CLK     Tckce       (-Th)    -0.071   I2Ccmd/cmd_pending
+                                                       I2Ccmd/cmd_pending
+    -------------------------------------------------  ---------------------------
+    Total                                      1.064ns (0.525ns logic, 0.539ns route)
+                                                       (49.3% logic, 50.7% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_osc_clk = PERIOD TIMEGRP "osc_clk" 10 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 8.562ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 10.000ns
+  Low pulse: 5.000ns
+  Low pulse limit: 0.719ns (Tcl)
+  Physical resource: I2Ccmd/cmd_pending/CLK
+  Logical resource: I2Ccmd/cmd_pending/CK
+  Location pin: SLICE_X22Y64.CLK
+  Clock network: osc_clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 8.562ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 10.000ns
+  High pulse: 5.000ns
+  High pulse limit: 0.719ns (Tch)
+  Physical resource: I2Ccmd/cmd_pending/CLK
+  Logical resource: I2Ccmd/cmd_pending/CK
+  Location pin: SLICE_X22Y64.CLK
+  Clock network: osc_clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 8.562ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 10.000ns
+  Low pulse: 5.000ns
+  Low pulse limit: 0.719ns (Tcl)
+  Physical resource: I2Ccmd/mstr_din<2>/CLK
+  Logical resource: I2Ccmd/mstr_din_2/CK
+  Location pin: SLICE_X14Y71.CLK
+  Clock network: osc_clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock osc_clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+osc_clk        |    8.774|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 6773 paths, 0 nets, and 784 connections
+
+Design statistics:
+   Minimum period:   8.774ns{1}   (Maximum frequency: 113.973MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Sun Dec 30 15:55:39 2018 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4539 MB
+
+
+

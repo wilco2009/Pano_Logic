@@ -1,0 +1,26 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o C:/Users/aleja/OneDrive/Github/Mio/Pano/Pano_Logic/G1/test_audio/Audio_test_tb_isim_beh.exe -prj C:/Users/aleja/OneDrive/Github/Mio/Pano/Pano_Logic/G1/test_audio/Audio_test_tb_beh.prj work.Audio_test_tb work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/aleja/OneDrive/Github/Mio/Pano/Pano_Logic/G1/test_audio/I2C_Command.v" into library work
+Analyzing Verilog file "C:/Users/aleja/OneDrive/Github/Mio/Pano/Pano_Logic/G1/test_audio/Audio_test_main.v" into library work
+Analyzing Verilog file "C:/Users/aleja/OneDrive/Github/Mio/Pano/Pano_Logic/G1/test_audio/Audio_test_tb.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Parsing VHDL file "C:/Users/aleja/OneDrive/Github/Mio/Pano/Pano_Logic/G1/test_audio/i2c_master_v01.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling module I2C_Command
+Compiling module Audio_test_main
+Compiling module Audio_test_tb
+Compiling module glbl
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling architecture arc of entity i2c_master_v01 [i2c_master_v01_default]
+Time Resolution for simulation is 1ps.
+Compiled 5 VHDL Units
+Compiled 4 Verilog Units
+Built simulation executable C:/Users/aleja/OneDrive/Github/Mio/Pano/Pano_Logic/G1/test_audio/Audio_test_tb_isim_beh.exe
+Fuse Memory Usage: 35884 KB
+Fuse CPU Usage: 577 ms

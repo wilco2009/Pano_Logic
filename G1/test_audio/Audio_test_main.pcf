@@ -1,0 +1,59 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Sun Dec 30 15:55:15 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "vo_scl" LOCATE = SITE "D4" LEVEL 1;
+COMP "osc_clk" LOCATE = SITE "U10" LEVEL 1;
+COMP "vo_sda" LOCATE = SITE "G3" LEVEL 1;
+NET "osc_clk_BUFGP/IBUFG" BEL "osc_clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+TIMEGRP osc_clk = BEL "cmd_en" BEL "I2Ccmd/I2C/Mtridata_i_scl_mstr" BEL
+        "I2Ccmd/I2C/i_mstr_ad_0" BEL "I2Ccmd/I2C/i_mstr_ad_1" BEL
+        "I2Ccmd/I2C/i_mstr_ad_2" BEL "I2Ccmd/I2C/i_mstr_ad_3" BEL
+        "I2Ccmd/I2C/i_mstr_ad_4" BEL "I2Ccmd/I2C/i_mstr_ad_5" BEL
+        "I2Ccmd/I2C/i_scl_cntr_0" BEL "I2Ccmd/I2C/i_scl_cntr_1" BEL
+        "I2Ccmd/I2C/i_scl_cntr_2" BEL "I2Ccmd/I2C/i_scl_cntr_3" BEL
+        "I2Ccmd/I2C/i_scl_cntr_4" BEL "I2Ccmd/I2C/i_scl_cntr_5" BEL
+        "I2Ccmd/I2C/i_scl_cntr_6" BEL "I2Ccmd/I2C/i_scl_cntr_7" BEL
+        "I2Ccmd/I2C/i_scl_cntr_8" BEL "I2Ccmd/I2C/i_scl_cntr_9" BEL
+        "I2Ccmd/I2C/i_scl_cntr_10" BEL "I2Ccmd/I2C/i_scl_cntr_11" BEL
+        "I2Ccmd/I2C/i_scl_cntr_12" BEL "I2Ccmd/I2C/i_scl_cntr_13" BEL
+        "I2Ccmd/I2C/i_scl_cntr_14" BEL "I2Ccmd/I2C/i_scl_cntr_15" BEL
+        "I2Ccmd/I2C/i_scl_cntr_16" BEL "I2Ccmd/I2C/i_scl_cntr_17" BEL
+        "I2Ccmd/I2C/i_scl_cntr_18" BEL "I2Ccmd/I2C/i_scl_cntr_19" BEL
+        "I2Ccmd/I2C/i_scl_cntr_20" BEL "I2Ccmd/I2C/i_scl_cntr_21" BEL
+        "I2Ccmd/I2C/i_scl_cntr_22" BEL "I2Ccmd/I2C/i_scl_cntr_23" BEL
+        "I2Ccmd/I2C/i_scl_cntr_24" BEL "I2Ccmd/I2C/i_scl_cntr_25" BEL
+        "I2Ccmd/I2C/i_scl_cntr_26" BEL "I2Ccmd/I2C/i_scl_cntr_27" BEL
+        "I2Ccmd/I2C/i_scl_cntr_28" BEL "I2Ccmd/I2C/i_scl_cntr_29" BEL
+        "I2Ccmd/I2C/i_scl_cntr_30" BEL "I2Ccmd/I2C/i_ack_mstr" BEL
+        "I2Ccmd/I2C/i_free" BEL "I2Ccmd/I2C/Mtrien_i_scl_mstr" BEL
+        "I2Ccmd/I2C/stm_mstr_FSM_FFd3" BEL "I2Ccmd/I2C/stm_mstr_FSM_FFd1" BEL
+        "I2Ccmd/I2C/stm_mstr_FSM_FFd2" BEL "I2Ccmd/I2C/stm_mstr_FSM_FFd6" BEL
+        "I2Ccmd/I2C/stm_mstr_FSM_FFd4" BEL "I2Ccmd/I2C/stm_mstr_FSM_FFd5" BEL
+        "I2Ccmd/I2C/stm_mstr_FSM_FFd9" BEL "I2Ccmd/I2C/stm_mstr_FSM_FFd7" BEL
+        "I2Ccmd/I2C/stm_mstr_FSM_FFd8" BEL "I2Ccmd/I2C/stm_mstr_FSM_FFd10" BEL
+        "I2Ccmd/I2C/stm_mstr_FSM_FFd11" BEL "I2Ccmd/I2C/stm_mstr_FSM_FFd14"
+        BEL "I2Ccmd/I2C/stm_mstr_FSM_FFd12" BEL
+        "I2Ccmd/I2C/stm_mstr_FSM_FFd13" BEL "I2Ccmd/I2C/stm_mstr_FSM_FFd17"
+        BEL "I2Ccmd/I2C/stm_mstr_FSM_FFd15" BEL
+        "I2Ccmd/I2C/stm_mstr_FSM_FFd16" BEL "I2Ccmd/I2C/stm_mstr_FSM_FFd19"
+        BEL "I2Ccmd/I2C/stm_mstr_FSM_FFd22" BEL "I2Ccmd/mstd_FSM_FFd1" BEL
+        "I2Ccmd/mstd_FSM_FFd12" BEL "I2Ccmd/mstd_FSM_FFd11" BEL
+        "I2Ccmd/mstd_FSM_FFd9" BEL "I2Ccmd/mstd_FSM_FFd6" BEL
+        "I2Ccmd/mstd_FSM_FFd3" BEL "I2Ccmd/cmd_pending" BEL "I2Ccmd/start" BEL
+        "I2Ccmd/I2C/i_bit_cntr_mstr_0" BEL "I2Ccmd/I2C/i_bit_cntr_mstr_1" BEL
+        "I2Ccmd/I2C/i_bit_cntr_mstr_2" BEL "I2Ccmd/I2C/i_ready" BEL
+        "I2Ccmd/I2C/stm_mstr_FSM_FFd20" BEL "I2Ccmd/I2C/stm_mstr_FSM_FFd18"
+        BEL "I2Ccmd/I2C/stm_mstr_FSM_FFd21" BEL "I2Ccmd/mstd_FSM_FFd13" BEL
+        "I2Ccmd/mstd_FSM_FFd8" BEL "I2Ccmd/mstd_FSM_FFd5" BEL
+        "I2Ccmd/mstd_FSM_FFd2" BEL "I2Ccmd/write" BEL "I2Ccmd/mstr_din_5" BEL
+        "I2Ccmd/mstr_din_4" BEL "I2Ccmd/mstr_din_3" BEL "I2Ccmd/mstr_din_2"
+        BEL "I2Ccmd/mstr_din_1" BEL "I2Ccmd/mstr_din_0" BEL "I2Ccmd/stop" BEL
+        "I2Ccmd/mstd_FSM_FFd10" BEL "I2Ccmd/mstd_FSM_FFd7" BEL
+        "I2Ccmd/mstd_FSM_FFd4" BEL "I2Ccmd/I2C/Mtrien_i_sda_mstr" BEL
+        "I2Ccmd/I2C/Mtridata_i_sda_mstr" BEL "osc_clk_BUFGP/BUFG.GCLKMUX" BEL
+        "osc_clk_BUFGP/BUFG";
+TS_osc_clk = PERIOD TIMEGRP "osc_clk" 10 ns HIGH 50%;
+SCHEMATIC END;
+

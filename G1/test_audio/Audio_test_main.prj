@@ -1,0 +1,3 @@
+vhdl work "i2c_master_v01.vhd"
+verilog work "I2C_Command.v"
+verilog work "Audio_test_main.v"
